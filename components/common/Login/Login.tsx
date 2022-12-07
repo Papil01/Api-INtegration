@@ -10,6 +10,7 @@ const[name,setName] = useState("")
 const[ pword,setPword] = useState("")
 const [data,setData] = useState([])
 
+
  const [userName,setuserName] = useRecoilState(UserName)
  const [password, setpassword ] =useRecoilState(Password)
  const [email, setemail ] =useRecoilState(Email)
@@ -27,13 +28,15 @@ console.log(page)
       .then(function (response) {
     // handle success
        setData(response.data.products)
-
+    setPage("")
        console.log(response.data.products);
         })
         .catch(function (error) {
     // handle error
        console.log(error);
   })
+     }else{
+        window.alert("Wrong PAssowrd")
      }
  }
 
